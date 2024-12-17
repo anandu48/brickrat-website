@@ -7,9 +7,10 @@
   "scripts": {
     "develop": "gatsby develop",
     "start": "npm run develop",
+    "clean": "gatsby clean",
     "build": "gatsby build",
     "predeploy": "gatsby build",
-    "deploy": "gh-pages -d public"
+    "deploy": "gh-pages -d public -b gh-pages --repo https://github.com/anandu48/brickrat-website.git"
   },
   "engines": {
     "node": ">=14"

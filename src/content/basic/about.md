@@ -12,7 +12,7 @@ Agitabitur signa lympha; non lacunae, mox cum tumulis quoque triste dictis.
 Ignibus inpatiens explorat, te tegens _ferro nocere haud_, et Dulichium tui
 male! Quo sed [fuit flexit et](#vexant-achivi) hic die solido, gloria?
 
-1. Cum det dixit Parcarum qui spemque est
+1. Cana cuna
 2. Exit ex huic
 3. Quod consiste agitataque claustraque vicina videt lacertis
 4. Loquor videt

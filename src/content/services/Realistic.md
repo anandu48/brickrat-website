@@ -10,10 +10,9 @@ Experience designs in true-to-life detail with dynamic ambience (time-of-day, mo
 <!-- Financial accounting (or financial accountancy) is the field of accounting concerned with the **summary, analysis and reporting** of financial transactions related to a business. -->
 
 ![Realistic]<video autoplay loop muted playsinline> 
-            <source src="/videos/demo.mp4" type="video/mp4">
+            <source src="/videos/demo.mp4?v=2" type="video/mp4">
             Your browser does not support the video tag.
             </video>
-
 
 # Objectives 
 

@@ -5,9 +5,15 @@ featured: true
 weight: 1
 ---
 
-Financial accounting (or financial accountancy) is the field of accounting concerned with the **summary, analysis and reporting** of financial transactions related to a business.
+Experience designs in true-to-life detail with dynamic ambience (time-of-day, mood), natural/artificial lighting, real-time shadows, and high-resolution textures. This photorealistic blend immerses users in the space, forging emotional connections before construction begins.
 
-![Accounting Services](/images/austin-distel-nGc5RT2HmF0-unsplash.jpg)
+<!-- Financial accounting (or financial accountancy) is the field of accounting concerned with the **summary, analysis and reporting** of financial transactions related to a business. -->
+
+![Realistic]<video autoplay loop muted playsinline> 
+            <source src="/videos/demo.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+            </video>
+
 
 # Objectives 
 

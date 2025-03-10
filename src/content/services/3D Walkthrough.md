@@ -6,7 +6,7 @@ draft: false
 weight: 2
 ---
 
-Lre markdownum, dictis umbrosum dextrum, Lelegeia quamquam distantes pares
+Lorem markdownum, dictis umbrosum dextrum, Lelegeia quamquam distantes pares
 ignisque quaerit dederat gemino Aethiopesque [caelo](#inque-ne-collocat)
 ulciscitur est. Morte [lugebere](#esse-ferro-nisi) conatur [Pallada
 quaerentes](#pia-non) tulit, **ignis vagatur undis**, latitantem ignemque non

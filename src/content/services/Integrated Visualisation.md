@@ -1,14 +1,12 @@
 ---
-title: "Mergers"
+title: "Integrated Visualisation"
 date: 2018-11-28T15:15:34+10:00
 featured: true
 draft: false
 weight: 4
 ---
 
-Lorem markdownum aequalis strigis. Saetigeri iubeas, vultu huic alvum nondum
-de obside ut laniavit arbor palmis, cum quin. Rupes vetat videndo, armigerae
-crimen habet Priamum nec.
+Sync designs directly from tools like AutoCAD or Revit into Brickrat’s platform, enabling real-time collaboration and instant updates across teams.
 
 ## Ne verba patulosque numen vix libet
 

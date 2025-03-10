@@ -1,15 +1,20 @@
 ---
-title: "Accounting"
+title: "Realistic"
 date: 2018-11-18T12:33:46+10:00
 featured: true
 weight: 1
 ---
 
-Financial accounting (or financial accountancy) is the field of accounting concerned with the **summary, analysis and reporting** of financial transactions related to a business.
+Experience designs in true-to-life detail with dynamic ambience (time-of-day, mood), natural/artificial lighting, real-time shadows, and high-resolution textures. This photorealistic blend immerses users in the space, forging emotional connections before construction begins.
 
-![Accounting Services](/images/austin-distel-nGc5RT2HmF0-unsplash.jpg)
+<!-- Financial accounting (or financial accountancy) is the field of accounting concerned with the **summary, analysis and reporting** of financial transactions related to a business. -->
 
-# Objectives 
+![Realistic]<video autoplay loop muted playsinline> 
+            <source src="/videos/demo.mp4?v=2" type="video/mp4">
+            Your browser does not support the video tag.
+            </video>
+
+<!-- # Objectives 
 
 Financial accounting and financial reporting are often used as synonyms.
 
@@ -78,4 +83,4 @@ The balance sheet is the financial statement showing a firm's assets, liabilitie
         - international
 - goodwill
 
-Owner's equity, sometimes referred to as net assets, is represented differently depending on the type of business ownership. Business ownership can be in the form of a sole proprietorship, partnership, or a corporation. For a corporation, the owner's equity portion usually shows common stock, and retained earnings (earnings kept in the company). Retained earnings come from the retained earnings statement, prepared prior to the balance sheet.
+Owner's equity, sometimes referred to as net assets, is represented differently depending on the type of business ownership. Business ownership can be in the form of a sole proprietorship, partnership, or a corporation. For a corporation, the owner's equity portion usually shows common stock, and retained earnings (earnings kept in the company). Retained earnings come from the retained earnings statement, prepared prior to the balance sheet. -->

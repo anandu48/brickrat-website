@@ -1,17 +1,14 @@
 ---
 path: '/contact'
-title: 'Contact'
+title: 'Get in Touch'
 date: 2018-02-22T17:01:34+07:00
 template: "contact"
 ---
 
-Lorem markdownum aequalis strigis. Saetigeri iubeas, vultu huic alvum nondum de obside ut laniavit arbor palmis, cum quin. Rupes vetat videndo, armigerae crimen habet Priamum nec.
+Let's discuss how we can help bring your architectural vision to life.
 
-| Day       | Opening Hours   |
-| --------- | --------------- |
-| Tuesday   | 8:30am - 5:00pm |
-| Wednesday | 8:30am - 5:00pm |
-| Thursday  | 8:30am - 5:00pm |
-| Friday    | 8:30am - 5:00pm |
-| Saturday  | 10:am - 4:00pm  |
-| Saturday  | Closed          |
+| Day               | Opening Hours     |
+| ----------------- | ----------------- |
+| Monday - Friday   | 9:00 AM - 5:00 PM |
+| Saturday          | 9:00 AM - 1:00 PM |
+| Sunday            |       Closed      |

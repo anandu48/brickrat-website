@@ -60,7 +60,7 @@ export default function Testimonials() {
                   </div>
                 </div>
                 <p className="text-gray-600 mb-6">
-                  "{testimonial.content}"
+                  {testimonial.content}
                 </p>
                 <div className="flex items-center">
                   <div className="flex text-yellow-400">
@@ -131,7 +131,7 @@ export default function Testimonials() {
                   </div>
                 </div>
                 <p className="text-xl text-gray-600 mb-8">
-                  "{carouselTestimonials[activeTestimonial].content}"
+                  {carouselTestimonials[activeTestimonial].content}
                 </p>
                 <div className="flex items-center justify-between">
                   <div className="flex items-center">

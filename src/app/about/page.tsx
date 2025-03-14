@@ -196,7 +196,7 @@ const team = [
     image: '/team/john-doe.jpg',
   },
   {
-    name: 'Jane Smith',
+    name: 'Indrajith',
     role: 'Technical Director',
     bio: 'Jane brings expertise in 3D modeling and virtual reality, driving our technical innovation forward.',
     image: '/team/jane-smith.jpg',

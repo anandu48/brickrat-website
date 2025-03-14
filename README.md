@@ -1,70 +1,126 @@
-# Gatsby Serif Theme
+# BrickRat - Architectural Visualization Website
 
-Serif is a beautiful small business theme for Gatsby. It contains content types for the archetypical small business website. The theme is fully responsive, blazing fast and artfully illustrated.
+A modern, responsive website for BrickRat, a revolutionary architectural visualization service. Built with Next.js, TypeScript, Tailwind CSS, and Framer Motion.
 
-[Live Demo](https://gatsby-serif.netlify.com/) | 
-[Zerostatic Themes](https://www.zerostatic.io/)
+## Features
 
-<a href="https://www.buymeacoffee.com/zerostatic" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
+- Modern, responsive design
+- Smooth animations and transitions
+- Interactive components
+- Multi-page layout
+- Contact form
+- Project showcase
+- Testimonials
+- Pricing plans
+- Google Maps integration
 
-![Gatsby Serif Theme screenshot](https://www.zerostatic.io/theme/gatsby-serif/gatsby-serif-screenshot.png)
+## Tech Stack
 
-## Theme features
+- **Framework**: Next.js 14
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS
+- **Animations**: Framer Motion
+- **Icons**: Heroicons
+- **Deployment**: Vercel (recommended)
 
-- Gatsby v3
-- Multi-page theme (not just a blog) that uses Markdown for multiple content-types/templates. It uses `gatsby-transformer-remark` and has several examples of querying and filtering `allMarkdownRemark`
-- Includes a graphql query in `gatsby-node.js` that creates pages and templates by content type based on the folder `src/pages/services`, `src/pages/team`,
-- Services (Markdown)
-- Team (Markdown)
-- Testimonials (Markdown)
-- Features (Data)
-- SCSS using `gatsby-plugin-sass`
-- Responsive design
-- Bootstrap 4 grid and media queries only
-- Responsive menu
-- Robust example content included
-- Royalty free illustrations included
-- SEO Titles & Meta using `gatsby-plugin-react-helmet`
-- ESLint
+## Prerequisites
 
-## Install
+- Node.js 18.x or later
+- npm or yarn
 
-gatsby 3 and node-sass 5 requires node v14 or higher
+## Getting Started
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/brickrat-website.git
+   cd brickrat-website
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
+
+3. Create a `.env.local` file in the root directory and add your environment variables:
+   ```
+   NEXT_PUBLIC_GOOGLE_MAPS_API_KEY=your_google_maps_api_key
+   ```
+
+4. Run the development server:
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   ```
+
+5. Open [http://localhost:3000](http://localhost:3000) in your browser to see the result.
+
+## Project Structure
 
 ```
-npm install
+brickrat-website/
+├── public/
+│   ├── images/
+│   ├── videos/
+│   ├── team/
+│   ├── projects/
+│   ├── testimonials/
+│   └── services/
+├── src/
+│   ├── app/
+│   │   ├── about/
+│   │   ├── services/
+│   │   ├── projects/
+│   │   ├── testimonials/
+│   │   ├── pricing/
+│   │   └── contact/
+│   ├── components/
+│   └── styles/
+└── package.json
 ```
 
-```
-npm run develop
-```
+## Pages
 
-```
-npm run build
-```
+- **Home**: Landing page with hero section and featured content
+- **About**: Company information, mission, and team
+- **Services**: Detailed service offerings and process
+- **Projects**: Portfolio showcase with filtering
+- **Testimonials**: Client testimonials and success stories
+- **Pricing**: Pricing plans and features
+- **Contact**: Contact form and information
 
-## Extras
+## Customization
 
-### License
+1. **Images**: Replace images in the `public` directory with your own
+2. **Content**: Update text content in respective page components
+3. **Styling**: Modify Tailwind classes or extend the theme in `tailwind.config.js`
+4. **Animations**: Adjust Framer Motion animations in components
 
-- Don't create ports or new versions of this theme without asking me
-- You can't re-distribute or re-sell this theme as your own template
+## Deployment
 
-### Credits 
+The easiest way to deploy this website is using [Vercel](https://vercel.com):
 
-- Beautiful royalty free Illustrations by Icons8 - https://icons8.com/illustrations/style--pixeltrue
-- Stock images by Unsplash - https://unsplash.com/
-- Feature icons by Noun Project - https://thenounproject.com/
+1. Push your code to a Git repository
+2. Import your project in Vercel
+3. Add your environment variables
+4. Deploy!
 
-### Other Themes by Zerostatic
+## Contributing
 
-- [Jekyll Serif](https://github.com/zerostaticthemes/jekyll-serif-theme)
-- [Jekyll Advance](https://www.zerostatic.io/theme/jekyll-advance/)
-- [Hugo Whisper](https://github.com/zerostaticthemes/hugo-whisper-theme)
-- [Hugo Serif](https://github.com/zerostaticthemes/hugo-serif-theme)
-- [Hugo Winston](https://github.com/zerostaticthemes/hugo-winston-theme)
-- [Hugo Advance](https://www.zerostatic.io/theme/hugo-advance/)
-- [Hugo Paradigm](https://www.zerostatic.io/theme/hugo-paradigm/)
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
+## License
 
-🇦🇺 **Made in Australia** by Robert Austin - leave a star mate!
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Contact
+
+Your Name - [@yourtwitter](https://twitter.com/yourtwitter) - email@example.com
+
+Project Link: [https://github.com/yourusername/brickrat-website](https://github.com/yourusername/brickrat-website)

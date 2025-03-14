@@ -5,7 +5,7 @@
   "/contact/page": "/contact",
   "/page": "/",
   "/pricing/page": "/pricing",
-  "/services/page": "/services",
   "/projects/page": "/projects",
+  "/services/page": "/services",
   "/testimonials/page": "/testimonials"
 }

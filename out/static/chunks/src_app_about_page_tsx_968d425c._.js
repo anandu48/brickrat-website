@@ -490,7 +490,7 @@ const values = [
 ];
 const team = [
     {
-        name: 'John Doe',
+        name: 'Minhaj Falaki',
         role: 'CEO & Founder',
         bio: 'With over 15 years of experience in architectural visualization, John leads BrickRat with a vision to revolutionize the industry.',
         image: '/team/john-doe.jpg'

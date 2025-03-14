@@ -1,5 +1,0 @@
-{
-    "componentChunkName": "component---src-templates-contact-js",
-    "path": "/contact",
-    "result": {"data":{"markdownRemark":{"frontmatter":{"title":"Get in Touch","path":"/contact"},"fields":{"slug":"/basic/contact/"},"html":"<p>Let's discuss how we can help bring your architectural vision to life.</p>\n<table>\n<thead>\n<tr>\n<th>Day</th>\n<th>Opening Hours</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Monday - Friday</td>\n<td>9:00 AM - 5:00 PM</td>\n</tr>\n<tr>\n<td>Saturday</td>\n<td>9:00 AM - 1:00 PM</td>\n</tr>\n<tr>\n<td>Sunday</td>\n<td>Closed</td>\n</tr>\n</tbody>\n</table>"}},"pageContext":{"id":"a68429b3-4e8d-5241-9545-aead46a884e2"}},
-    "staticQueryHashes": ["1302411885","1820306268","1911626797","239876865","3041911663","4266893431","748283036","760941739"]}

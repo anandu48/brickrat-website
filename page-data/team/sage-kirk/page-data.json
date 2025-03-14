@@ -1,5 +1,0 @@
-{
-    "componentChunkName": "component---src-templates-team-js",
-    "path": "/team/sage-kirk/",
-    "result": {"data":{"markdownRemark":{"frontmatter":{"title":"Sage Kirk"},"fields":{"slug":"/team/sage-kirk/"},"html":"<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Bibendum arcu vitae elementum curabitur vitae nunc sed. Tortor at risus viverra adipiscing at in.</p>"}},"pageContext":{"id":"ad293a96-93fa-59c9-bfea-2b64e5c0cd83"}},
-    "staticQueryHashes": ["1820306268","1911626797","239876865","3041911663","4266893431","748283036","760941739"]}

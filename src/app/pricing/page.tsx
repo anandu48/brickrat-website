@@ -1,183 +1,269 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 export default function Pricing() {
   const [isAnnual, setIsAnnual] = useState(true);
+  const [totalArea, setTotalArea] = useState(1000);
+  const [buildingType, setBuildingType] = useState('private');
+  const [additionalFunctions, setAdditionalFunctions] = useState({
+    configurator: false,
+    weatherPro: false,
+    touchPresentation: false,
+    thirdPerson: false,
+    autoMode: false,
+    firstPerson: false,
+  });
+  const [sourceData, setSourceData] = useState('none');
+  const [totalPrice, setTotalPrice] = useState(0);
+
+  // Base price calculation based on area and building type
+  const calculateBasePrice = () => {
+    let basePrice = 0;
+    const area = totalArea / 10.764;
+
+    // Base price per square meter based on building type
+    const pricePerSquareMeter = {
+      private: 15,
+      'low-rise': 12,
+      apartment: 10,
+      commercial: 20,
+      cultural: 18,
+    };
+
+    basePrice = area * pricePerSquareMeter[buildingType as keyof typeof pricePerSquareMeter];
+    return basePrice;
+  };
+
+  // Calculate additional functions cost
+  const calculateAdditionalCost = () => {
+    let additionalCost = 0;
+    
+    if (additionalFunctions.configurator) additionalCost += 1000;
+    if (additionalFunctions.weatherPro) additionalCost += 500;
+    if (additionalFunctions.touchPresentation) additionalCost += 1000;
+    if (additionalFunctions.thirdPerson) additionalCost += 300;
+    if (additionalFunctions.autoMode) additionalCost += 300;
+    if (additionalFunctions.firstPerson) additionalCost += 300;
+
+    return additionalCost;
+  };
+
+  // Calculate discount based on source data
+  const calculateDiscount = (basePrice: number) => {
+    let discount = 0;
+    switch (sourceData) {
+      case 'model':
+        discount = basePrice * 0.3;
+        break;
+      case 'design':
+        discount = basePrice * 0.05;
+        break;
+      default:
+        discount = 0;
+    }
+    return discount;
+  };
+
+  // Update total price whenever any input changes
+  useEffect(() => {
+    const basePrice = calculateBasePrice();
+    const additionalCost = calculateAdditionalCost();
+    const discount = calculateDiscount(basePrice);
+    setTotalPrice(basePrice + additionalCost - discount);
+  }, [totalArea, buildingType, additionalFunctions, sourceData, calculateBasePrice, calculateAdditionalCost, calculateDiscount]);
+
+  const handleAdditionalFunctionChange = (functionName: string) => {
+    setAdditionalFunctions(prev => ({
+      ...prev,
+      [functionName]: !prev[functionName as keyof typeof additionalFunctions]
+    }));
+  };
 
   return (
-    <div className="min-h-screen pt-16">
-      {/* Hero Section */}
-      <section className="relative py-20 bg-gray-900 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center"
-          >
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              Simple, Transparent Pricing
-            </h1>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Choose the perfect plan for your architectural visualization needs
-            </p>
-          </motion.div>
-        </div>
-      </section>
+    <div className="min-h-screen py-20 bg-gray-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="text-center mb-16"
+        >
+          <h1 className="text-4xl font-bold text-gray-900 mb-4">
+            Project Price Calculator
+          </h1>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            Calculate the cost of your interactive architectural visualization project
+          </p>
+        </motion.div>
 
-      {/* Pricing Toggle */}
-      <section className="py-12 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-center items-center space-x-4">
-            <span className={`text-lg ${!isAnnual ? 'text-gray-900 font-semibold' : 'text-gray-500'}`}>
-              Monthly
-            </span>
-            <button
-              onClick={() => setIsAnnual(!isAnnual)}
-              className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors focus:outline-none ${
-                isAnnual ? 'bg-blue-600' : 'bg-gray-200'
-              }`}
-            >
-              <span
-                className={`inline-block h-4 w-4 transform rounded-full bg-white transition-transform ${
-                  isAnnual ? 'translate-x-6' : 'translate-x-1'
-                }`}
+        <div className="bg-white rounded-xl shadow-lg p-8">
+          <div className="space-y-8">
+            {/* Total Area Input */}
+            <div>
+              <label className="block text-lg font-medium text-gray-900 mb-4">
+                Total Area (ft²)
+              </label>
+              <input
+                type="range"
+                min="1000"
+                max="107639"
+                value={totalArea}
+                onChange={(e) => setTotalArea(Number(e.target.value))}
+                className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"
               />
-            </button>
-            <span className={`text-lg ${isAnnual ? 'text-gray-900 font-semibold' : 'text-gray-500'}`}>
-              Annual
-              {isAnnual && (
-                <span className="ml-2 text-sm text-green-600 font-normal">
-                  Save 20%
-                </span>
-              )}
-            </span>
-          </div>
-        </div>
-      </section>
+              <div className="flex justify-between mt-2">
+                <span className="text-sm text-gray-600">1,000 ft²</span>
+                <span className="text-sm text-gray-600">107,639 ft²</span>
+                <span className="text-sm font-medium text-gray-900">{totalArea.toLocaleString()} ft²</span>
+              </div>
+            </div>
 
-      {/* Pricing Plans */}
-      <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {pricingPlans.map((plan, index) => (
-              <motion.div
-                key={plan.name}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: index * 0.2 }}
-                viewport={{ once: true }}
-                className={`bg-white rounded-xl shadow-lg overflow-hidden ${
-                  plan.featured ? 'ring-2 ring-blue-600' : ''
-                }`}
+            {/* Building Types */}
+            <div>
+              <label className="block text-lg font-medium text-gray-900 mb-4">
+                Types of Buildings
+              </label>
+              <select 
+                className="w-full p-3 border border-gray-300 rounded-lg"
+                value={buildingType}
+                onChange={(e) => setBuildingType(e.target.value)}
               >
-                {plan.featured && (
-                  <div className="bg-blue-600 text-white text-center py-2 text-sm font-semibold">
-                    Most Popular
-                  </div>
-                )}
-                <div className="p-8">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                    {plan.name}
-                  </h3>
-                  <div className="mb-6">
-                    <span className="text-4xl font-bold text-gray-900">
-                      ${isAnnual ? plan.annualPrice : plan.monthlyPrice}
-                    </span>
-                    <span className="text-gray-500">/{isAnnual ? 'year' : 'month'}</span>
-                  </div>
-                  <p className="text-gray-600 mb-8">
-                    {plan.description}
-                  </p>
-                  <ul className="space-y-4 mb-8">
-                    {plan.features.map((feature, i) => (
-                      <li key={i} className="flex items-center text-gray-600">
-                        <svg className="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                        </svg>
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
-                  <button
-                    className={`w-full py-3 px-6 rounded-lg font-semibold transition-colors ${
-                      plan.featured
-                        ? 'bg-blue-600 text-white hover:bg-blue-700'
-                        : 'bg-gray-100 text-gray-900 hover:bg-gray-200'
-                    }`}
-                  >
-                    Get Started
-                  </button>
+                <option value="private">Private sector (residential buildings up to 3000 m²)</option>
+                <option value="low-rise">Low-rise residential complex (from 3000 m² total)</option>
+                <option value="apartment">Apartment residential building (from 3000 m²)</option>
+                <option value="commercial">Commercial real estate</option>
+                <option value="cultural">Cultural and recreational facilities</option>
+              </select>
+            </div>
+
+            {/* Basic Functionality */}
+            <div>
+              <h3 className="text-lg font-medium text-gray-900 mb-4">Basic Functionality</h3>
+              <div className="space-y-2">
+                <div className="flex items-center">
+                  <input type="checkbox" className="h-4 w-4 text-blue-600" checked disabled />
+                  <span className="ml-2 text-gray-700">Professional camera</span>
                 </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+                <div className="flex items-center">
+                  <input type="checkbox" className="h-4 w-4 text-blue-600" checked disabled />
+                  <span className="ml-2 text-gray-700">Weather and time settings (LITE ver.)</span>
+                </div>
+                <div className="flex items-center">
+                  <input type="checkbox" className="h-4 w-4 text-blue-600" checked disabled />
+                  <span className="ml-2 text-gray-700">"DRONE" Presentation mode</span>
+                </div>
+              </div>
+            </div>
 
-      {/* FAQ Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
-              Frequently Asked Questions
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Find answers to common questions about our pricing and services
-            </p>
-          </motion.div>
+            {/* Additional Functions */}
+            <div>
+              <h3 className="text-lg font-medium text-gray-900 mb-4">Additional Functions</h3>
+              <div className="space-y-2">
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center">
+                    <input 
+                      type="checkbox" 
+                      className="h-4 w-4 text-blue-600"
+                      checked={additionalFunctions.configurator}
+                      onChange={() => handleAdditionalFunctionChange('configurator')}
+                    />
+                    <span className="ml-2 text-gray-700">Configurator</span>
+                  </div>
+                  <span className="text-gray-600">+$1000</span>
+                </div>
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center">
+                    <input 
+                      type="checkbox" 
+                      className="h-4 w-4 text-blue-600"
+                      checked={additionalFunctions.weatherPro}
+                      onChange={() => handleAdditionalFunctionChange('weatherPro')}
+                    />
+                    <span className="ml-2 text-gray-700">Weather and time settings (PRO ver.)</span>
+                  </div>
+                  <span className="text-gray-600">+$500</span>
+                </div>
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center">
+                    <input 
+                      type="checkbox" 
+                      className="h-4 w-4 text-blue-600"
+                      checked={additionalFunctions.touchPresentation}
+                      onChange={() => handleAdditionalFunctionChange('touchPresentation')}
+                    />
+                    <span className="ml-2 text-gray-700">TOUCH PRESENTATION mode</span>
+                  </div>
+                  <span className="text-gray-600">+$1000</span>
+                </div>
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center">
+                    <input 
+                      type="checkbox" 
+                      className="h-4 w-4 text-blue-600"
+                      checked={additionalFunctions.thirdPerson}
+                      onChange={() => handleAdditionalFunctionChange('thirdPerson')}
+                    />
+                    <span className="ml-2 text-gray-700">3RD PERSON mode</span>
+                  </div>
+                  <span className="text-gray-600">+$300</span>
+                </div>
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center">
+                    <input 
+                      type="checkbox" 
+                      className="h-4 w-4 text-blue-600"
+                      checked={additionalFunctions.autoMode}
+                      onChange={() => handleAdditionalFunctionChange('autoMode')}
+                    />
+                    <span className="ml-2 text-gray-700">AUTO mode</span>
+                  </div>
+                  <span className="text-gray-600">+$300</span>
+                </div>
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center">
+                    <input 
+                      type="checkbox" 
+                      className="h-4 w-4 text-blue-600"
+                      checked={additionalFunctions.firstPerson}
+                      onChange={() => handleAdditionalFunctionChange('firstPerson')}
+                    />
+                    <span className="ml-2 text-gray-700">1ST PERSON mode</span>
+                  </div>
+                  <span className="text-gray-600">+$300</span>
+                </div>
+              </div>
+            </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {faqs.map((faq, index) => (
-              <motion.div
-                key={faq.question}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: index * 0.2 }}
-                viewport={{ once: true }}
-                className="bg-white p-6 rounded-lg shadow-lg"
+            {/* Source Data */}
+            <div>
+              <h3 className="text-lg font-medium text-gray-900 mb-4">Source Data</h3>
+              <select 
+                className="w-full p-3 border border-gray-300 rounded-lg"
+                value={sourceData}
+                onChange={(e) => setSourceData(e.target.value)}
               >
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                  {faq.question}
-                </h3>
-                <p className="text-gray-600">
-                  {faq.answer}
-                </p>
-              </motion.div>
-            ))}
+                <option value="none">NONE</option>
+                <option value="model">Ready-made 3D model (-30%)</option>
+                <option value="design">Architectural design and static visualizations (-5%)</option>
+              </select>
+            </div>
+
+            {/* Total Price */}
+            <div className="bg-gray-50 p-6 rounded-lg">
+              <div className="flex justify-between items-center">
+                <span className="text-2xl font-bold text-gray-900">TOTAL PRICE</span>
+                <span className="text-3xl font-bold text-blue-600">${totalPrice.toFixed(2)}</span>
+              </div>
+            </div>
+
+            <button className="w-full bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold transition-colors">
+              Send Request
+            </button>
           </div>
         </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-20 bg-gray-900 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-3xl font-bold mb-6">
-              Ready to Get Started?
-            </h2>
-            <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
-              Choose your plan and start transforming your architectural visualization needs today.
-            </p>
-            <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors">
-              Contact Sales
-            </button>
-          </motion.div>
-        </div>
-      </section>
+      </div>
     </div>
   );
 }
@@ -228,22 +314,3 @@ const pricingPlans = [
     ],
   },
 ];
-
-const faqs = [
-  {
-    question: 'Can I switch plans later?',
-    answer: 'Yes, you can upgrade or downgrade your plan at any time. Changes will be reflected in your next billing cycle.',
-  },
-  {
-    question: 'What payment methods do you accept?',
-    answer: 'We accept all major credit cards, PayPal, and bank transfers for annual plans.',
-  },
-  {
-    question: 'Do you offer custom solutions?',
-    answer: 'Yes, we provide custom enterprise solutions tailored to your specific needs. Contact our sales team for more information.',
-  },
-  {
-    question: 'What kind of support do you provide?',
-    answer: 'All plans include email support. Professional and Enterprise plans include priority support and dedicated account managers.',
-  },
-]; 

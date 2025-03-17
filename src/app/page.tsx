@@ -116,7 +116,7 @@ export default function Home() {
               Ready to Transform Your Project?
             </h2>
             <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
-              Let's create something extraordinary together. Contact us today to discuss your vision.
+              {`Let's create something extraordinary together. Contact us today to discuss your vision.`}
             </p>
             <Link
               href="/contact"

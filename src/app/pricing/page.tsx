@@ -4,7 +4,6 @@ import { motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
 
 export default function Pricing() {
-  const [isAnnual, setIsAnnual] = useState(true);
   const [totalArea, setTotalArea] = useState(1000);
   const [buildingType, setBuildingType] = useState('private');
   const [additionalFunctions, setAdditionalFunctions] = useState({

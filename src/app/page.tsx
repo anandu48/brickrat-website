@@ -1,92 +1,67 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import Image from 'next/image';
-import { useState } from 'react';
+import Link from 'next/link';
 
-export default function Testimonials() {
-  const [activeTestimonial, setActiveTestimonial] = useState(0);
-
+export default function Home() {
   return (
-    <div className="min-h-screen pt-16">
+    <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative py-20 bg-gray-900 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
+      <section className="relative h-screen flex items-center justify-center overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/50 z-10" />
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="w-full h-full object-cover"
+          >
+            <source src="/hero-video.mp4" type="video/mp4" />
+          </video>
+        </div>
+        
+        <div className="relative z-20 text-center text-white px-4">
+          <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-center"
+            className="text-5xl md:text-7xl font-bold mb-6"
           >
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              Client Testimonials
-            </h1>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Hear what our clients have to say about their experience with BrickRat
-            </p>
+            Transform Your Vision Into Reality
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto"
+          >
+            Experience architectural designs like never before with our revolutionary 3D visualization technology
+          </motion.p>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="flex flex-col sm:flex-row gap-4 justify-center"
+          >
+            <Link
+              href="/contact"
+              className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors"
+            >
+              Get Started
+            </Link>
+            <Link
+              href="/projects"
+              className="bg-white/10 hover:bg-white/20 text-white px-8 py-3 rounded-lg font-semibold transition-colors backdrop-blur-sm"
+            >
+              View Projects
+            </Link>
           </motion.div>
         </div>
       </section>
 
-      {/* Featured Testimonials */}
-      <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            {testimonials.map((testimonial, index) => (
-              <motion.div
-                key={testimonial.name}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: index * 0.2 }}
-                viewport={{ once: true }}
-                className="bg-white rounded-xl shadow-lg p-8"
-              >
-                <div className="flex items-center mb-6">
-                  <div className="relative w-16 h-16 rounded-full overflow-hidden mr-4">
-                    <Image
-                      src={testimonial.image}
-                      alt={testimonial.name}
-                      fill
-                      className="object-cover"
-                    />
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-semibold text-gray-900">
-                      {testimonial.name}
-                    </h3>
-                    <p className="text-gray-600">
-                      {testimonial.role}
-                    </p>
-                  </div>
-                </div>
-                <p className="text-gray-600 mb-6">
-                  {"\u0022"}{testimonial.content}{"\u0022"}
-                </p>
-                <div className="flex items-center">
-                  <div className="flex text-yellow-400">
-                    {[...Array(5)].map((_, i) => (
-                      <svg
-                        key={i}
-                        className="w-5 h-5"
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                      >
-                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                      </svg>
-                    ))}
-                  </div>
-                  <span className="ml-2 text-gray-600">
-                    {testimonial.rating}/5
-                  </span>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Interactive Testimonial Carousel */}
-      <section className="py-20 bg-gray-50">
+      {/* Features Section */}
+      <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -95,91 +70,35 @@ export default function Testimonials() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
-              Success Stories
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+              Why Choose BrickRat?
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Discover how we&apos;ve helped our clients achieve their goals
+              We combine cutting-edge technology with artistic vision to create immersive architectural experiences
             </p>
           </motion.div>
 
-          <div className="relative">
-            <div className="overflow-hidden">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {features.map((feature, index) => (
               <motion.div
-                key={activeTestimonial}
-                initial={{ opacity: 0, x: 100 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: -100 }}
-                className="bg-white rounded-xl shadow-lg p-8 max-w-3xl mx-auto"
+                key={feature.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: index * 0.2 }}
+                viewport={{ once: true }}
+                className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow"
               >
-                <div className="flex items-center mb-6">
-                  <div className="relative w-20 h-20 rounded-full overflow-hidden mr-6">
-                    <Image
-                      src={carouselTestimonials[activeTestimonial].image}
-                      alt={carouselTestimonials[activeTestimonial].name}
-                      fill
-                      className="object-cover"
-                    />
-                  </div>
-                  <div>
-                    <h3 className="text-2xl font-semibold text-gray-900">
-                      {carouselTestimonials[activeTestimonial].name}
-                    </h3>
-                    <p className="text-gray-600">
-                      {carouselTestimonials[activeTestimonial].role}
-                    </p>
-                  </div>
+                <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-6">
+                  {feature.icon}
                 </div>
-                <p className="text-xl text-gray-600 mb-8">
-                  {"\u0022"}{carouselTestimonials[activeTestimonial].content}{"\u0022"}
+                <h3 className="text-xl font-semibold text-gray-900 mb-4">
+                  {feature.title}
+                </h3>
+                <p className="text-gray-600">
+                  {feature.description}
                 </p>
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center">
-                    <div className="flex text-yellow-400">
-                      {[...Array(5)].map((_, i) => (
-                        <svg
-                          key={i}
-                          className="w-6 h-6"
-                          fill="currentColor"
-                          viewBox="0 0 20 20"
-                        >
-                          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                        </svg>
-                      ))}
-                    </div>
-                    <span className="ml-2 text-gray-600">
-                      {carouselTestimonials[activeTestimonial].rating}/5
-                    </span>
-                  </div>
-                  <div className="flex space-x-2">
-                    <button
-                      onClick={() =>
-                        setActiveTestimonial((prev) =>
-                          prev === 0 ? carouselTestimonials.length - 1 : prev - 1
-                        )
-                      }
-                      className="p-2 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors"
-                    >
-                      <svg className="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                      </svg>
-                    </button>
-                    <button
-                      onClick={() =>
-                        setActiveTestimonial((prev) =>
-                          prev === carouselTestimonials.length - 1 ? 0 : prev + 1
-                        )
-                      }
-                      className="p-2 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors"
-                    >
-                      <svg className="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                      </svg>
-                    </button>
-                  </div>
-                </div>
               </motion.div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
@@ -193,15 +112,18 @@ export default function Testimonials() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl font-bold mb-6">
-              Ready to Experience the Difference?
+            <h2 className="text-4xl font-bold mb-6">
+              Ready to Transform Your Project?
             </h2>
             <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
-              Join our growing list of satisfied clients and transform your architectural visualization needs.
+              Let's create something extraordinary together. Contact us today to discuss your vision.
             </p>
-            <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors">
-              Get Started Today
-            </button>
+            <Link
+              href="/contact"
+              className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors inline-block"
+            >
+              Schedule a Consultation
+            </Link>
           </motion.div>
         </div>
       </section>
@@ -209,48 +131,32 @@ export default function Testimonials() {
   );
 }
 
-const testimonials = [
+const features = [
   {
-    name: 'Sarah Johnson',
-    role: 'Architect, Johnson & Associates',
-    content:
-      'BrickRat has transformed how we present our designs to clients. The interactive walkthroughs have significantly improved client engagement and understanding.',
-    image: '/testimonials/sarah.jpg',
-    rating: 5,
+    title: 'Immersive 3D Visualization',
+    description: 'Experience your designs in stunning 3D with photorealistic rendering and interactive elements.',
+    icon: (
+      <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+      </svg>
+    ),
   },
   {
-    name: 'Michael Chen',
-    role: 'Project Manager, Urban Developments',
-    content:
-      'The level of detail and realism in their visualizations is outstanding. It has helped us secure multiple projects and exceed client expectations.',
-    image: '/testimonials/michael.jpg',
-    rating: 5,
-  },
-];
-
-const carouselTestimonials = [
-  {
-    name: 'David Thompson',
-    role: 'CEO, Thompson Properties',
-    content:
-      'Working with BrickRat has been a game-changer for our real estate development projects. Their VR experiences have helped us close deals faster than ever before.',
-    image: '/testimonials/david.jpg',
-    rating: 5,
+    title: 'Interactive Walkthroughs',
+    description: 'Navigate through your designs with our intuitive and responsive walkthrough system.',
+    icon: (
+      <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+      </svg>
+    ),
   },
   {
-    name: 'Emma Rodriguez',
-    role: 'Interior Designer, Design Studio',
-    content:
-      'The attention to detail and ability to capture the essence of our designs is remarkable. BrickRat has become an essential part of our design process.',
-    image: '/testimonials/emma.jpg',
-    rating: 5,
-  },
-  {
-    name: 'James Wilson',
-    role: 'Construction Manager, Wilson Builders',
-    content:
-      'The 3D visualizations have helped us identify potential issues before construction begins, saving us time and resources. Highly recommended!',
-    image: '/testimonials/james.jpg',
-    rating: 5,
+    title: 'Virtual Reality Experience',
+    description: 'Step into your designs with our cutting-edge VR technology for an unparalleled experience.',
+    icon: (
+      <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+      </svg>
+    ),
   },
 ];

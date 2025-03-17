@@ -1,11 +1,11 @@
 {
   "/_not-found/page": "/_not-found",
   "/favicon.ico/route": "/favicon.ico",
+  "/pricing/page": "/pricing",
   "/about/page": "/about",
   "/contact/page": "/contact",
   "/page": "/",
-  "/pricing/page": "/pricing",
   "/projects/page": "/projects",
-  "/services/page": "/services",
-  "/testimonials/page": "/testimonials"
+  "/testimonials/page": "/testimonials",
+  "/services/page": "/services"
 }

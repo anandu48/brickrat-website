@@ -29,7 +29,7 @@ export default function Contact() {
   return (
     <div className="min-h-screen pt-16">
       {/* Hero Section */}
-      <section className="relative py-20 bg-gray-900 text-white">
+      <section className="relative py-20 bg-teal-900 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -40,7 +40,7 @@ export default function Contact() {
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
               Get in Touch
             </h1>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+            <p className="text-xl text-teal-300 max-w-3xl mx-auto">
               Let&apos;s discuss how we can help bring your architectural vision to life
             </p>
           </motion.div>
@@ -59,12 +59,12 @@ export default function Contact() {
               viewport={{ once: true }}
               className="bg-white rounded-xl shadow-lg p-8"
             >
-              <h2 className="text-2xl font-bold text-gray-900 mb-6">
+              <h2 className="text-2xl font-bold text-teal-900 mb-6">
                 Send us a Message
               </h2>
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
+                  <label htmlFor="name" className="block text-sm font-medium text-teal-700 mb-1">
                     Name
                   </label>
                   <input
@@ -73,12 +73,12 @@ export default function Contact() {
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    className="w-full px-4 py-2 border border-teal-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                     required
                   />
                 </div>
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
+                  <label htmlFor="email" className="block text-sm font-medium text-teal-700 mb-1">
                     Email
                   </label>
                   <input
@@ -87,12 +87,12 @@ export default function Contact() {
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    className="w-full px-4 py-2 border border-teal-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                     required
                   />
                 </div>
                 <div>
-                  <label htmlFor="company" className="block text-sm font-medium text-gray-700 mb-1">
+                  <label htmlFor="company" className="block text-sm font-medium text-teal-700 mb-1">
                     Company
                   </label>
                   <input
@@ -101,11 +101,11 @@ export default function Contact() {
                     name="company"
                     value={formData.company}
                     onChange={handleChange}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    className="w-full px-4 py-2 border border-teal-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                   />
                 </div>
                 <div>
-                  <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">
+                  <label htmlFor="phone" className="block text-sm font-medium text-teal-700 mb-1">
                     Phone
                   </label>
                   <input
@@ -114,11 +114,11 @@ export default function Contact() {
                     name="phone"
                     value={formData.phone}
                     onChange={handleChange}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    className="w-full px-4 py-2 border border-teal-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                   />
                 </div>
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
+                  <label htmlFor="message" className="block text-sm font-medium text-teal-700 mb-1">
                     Message
                   </label>
                   <textarea
@@ -127,7 +127,7 @@ export default function Contact() {
                     value={formData.message}
                     onChange={handleChange}
                     rows={4}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    className="w-full px-4 py-2 border border-teal-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                     required
                   />
                 </div>
@@ -149,7 +149,7 @@ export default function Contact() {
               className="space-y-8"
             >
               <div>
-                <h2 className="text-2xl font-bold text-gray-900 mb-6">
+                <h2 className="text-2xl font-bold text-teal-900 mb-6">
                   Contact Information
                 </h2>
                 <div className="space-y-4">
@@ -159,10 +159,10 @@ export default function Contact() {
                         {item.icon}
                       </div>
                       <div>
-                        <h3 className="text-lg font-semibold text-gray-900 mb-1">
+                        <h3 className="text-lg font-semibold text-teal-900 mb-1">
                           {item.title}
                         </h3>
-                        <p className="text-gray-600">
+                        <p className="text-teal-600">
                           {item.content}
                         </p>
                       </div>
@@ -172,12 +172,12 @@ export default function Contact() {
               </div>
 
               <div>
-                <h2 className="text-2xl font-bold text-gray-900 mb-6">
+                <h2 className="text-2xl font-bold text-teal-900 mb-6">
                   Office Hours
                 </h2>
                 <div className="space-y-2">
                   {officeHours.map((hours, index) => (
-                    <div key={index} className="flex justify-between text-gray-600">
+                    <div key={index} className="flex justify-between text-teal-600">
                       <span>{hours.day}</span>
                       <span>{hours.time}</span>
                     </div>
@@ -186,7 +186,7 @@ export default function Contact() {
               </div>
 
               <div>
-                <h2 className="text-2xl font-bold text-gray-900 mb-6">
+                <h2 className="text-2xl font-bold text-teal-900 mb-6">
                   Follow Us
                 </h2>
                 <div className="flex space-x-4">
@@ -194,7 +194,7 @@ export default function Contact() {
                     <a
                       key={index}
                       href={social.url}
-                      className="w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center hover:bg-gray-200 transition-colors"
+                      className="w-10 h-10 bg-teal-100 rounded-lg flex items-center justify-center hover:bg-teal-200 transition-colors"
                     >
                       {social.icon}
                     </a>
@@ -207,7 +207,7 @@ export default function Contact() {
       </section>
 
       {/* Map Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-teal-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -216,10 +216,10 @@ export default function Contact() {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl font-bold text-teal-900 mb-4">
               Visit Us
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-teal-600 max-w-3xl mx-auto">
               Come and see our state-of-the-art visualization studio
             </p>
           </motion.div>
@@ -282,7 +282,7 @@ const socialLinks = [
   {
     url: '#',
     icon: (
-      <svg className="w-5 h-5 text-gray-600" fill="currentColor" viewBox="0 0 24 24">
+      <svg className="w-5 h-5 text-teal-600" fill="currentColor" viewBox="0 0 24 24">
         <path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" />
       </svg>
     ),
@@ -290,7 +290,7 @@ const socialLinks = [
   {
     url: '#',
     icon: (
-      <svg className="w-5 h-5 text-gray-600" fill="currentColor" viewBox="0 0 24 24">
+      <svg className="w-5 h-5 text-teal-600" fill="currentColor" viewBox="0 0 24 24">
         <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
       </svg>
     ),
@@ -298,7 +298,7 @@ const socialLinks = [
   {
     url: '#',
     icon: (
-      <svg className="w-5 h-5 text-gray-600" fill="currentColor" viewBox="0 0 24 24">
+      <svg className="w-5 h-5 text-teal-600" fill="currentColor" viewBox="0 0 24 24">
         <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-.88-.06-1.601-1-1.601-1 0-1.16.781-1.16 1.601v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
       </svg>
     ),

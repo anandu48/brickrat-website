@@ -1,26 +1,58 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@theme {
+  /* Original Gray colors */
+  --color-gray-50: oklch(0.984 0.003 247.858);
+  --color-gray-100: oklch(0.968 0.007 247.896);
+  --color-gray-200: oklch(0.929 0.013 255.508);
+  --color-gray-300: oklch(0.869 0.022 252.894);
+  --color-gray-400: oklch(0.704 0.04 256.788);
+  --color-gray-500: oklch(0.554 0.046 257.417);
+  --color-gray-600: oklch(0.446 0.043 257.281);
+  --color-gray-700: oklch(0.372 0.044 257.287);
+  --color-gray-800: oklch(0.279 0.041 260.031);
+  --color-gray-900: oklch(0.208 0.042 265.755);
+  --color-gray-950: oklch(0.129 0.042 264.695);
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  /* Brand Teal colors based on #48B8D0 */
+  --color-teal-50:  oklch(0.97 0.013 200);
+  --color-teal-100: oklch(0.92 0.03 200);
+  --color-teal-200: oklch(0.86 0.055 200);
+  --color-teal-300: oklch(0.8 0.08 200);
+  --color-teal-400: oklch(0.76 0.1 200);
+  --color-teal-500: oklch(0.72 0.11 200); /* Original Brand Teal (#48B8D0) */
+  --color-teal-600: oklch(0.65 0.095 200);
+  --color-teal-700: oklch(0.55 0.08 200);
+  --color-teal-800: oklch(0.45 0.06 200);
+  --color-teal-900: oklch(0.35 0.04 200);
+  --color-teal-950: oklch(0.25 0.02 200);
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+  /* Brand Navy colors based on #2B465C */
+  --color-navy-50:  oklch(0.97 0.01 250);
+  --color-navy-100: oklch(0.92 0.02 250);
+  --color-navy-200: oklch(0.86 0.03 250);
+  --color-navy-300: oklch(0.8 0.04 250);
+  --color-navy-400: oklch(0.7 0.05 250);
+  --color-navy-500: oklch(0.6 0.06 250); /* Original Brand Navy (#2B465C) */
+  --color-navy-600: oklch(0.5 0.05 250);
+  --color-navy-700: oklch(0.4 0.04 250);
+  --color-navy-800: oklch(0.3 0.03 250);
+  --color-navy-900: oklch(0.2 0.02 250);
+  --color-navy-950: oklch(0.1 0.01 250);
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  /* Brand Pink colors based on #EB2A7B */
+  --color-pink-50:  oklch(0.97 0.05 350);
+  --color-pink-100: oklch(0.92 0.1 350);
+  --color-pink-200: oklch(0.86 0.15 350);
+  --color-pink-300: oklch(0.8 0.2 350);
+  --color-pink-400: oklch(0.75 0.25 350);
+  --color-pink-500: oklch(0.7 0.3 350); /* Original Brand Pink (#EB2A7B) */
+  --color-pink-600: oklch(0.65 0.25 350);
+  --color-pink-700: oklch(0.6 0.2 350);
+  --color-pink-800: oklch(0.55 0.15 350);
+  --color-pink-900: oklch(0.5 0.1 350);
+  --color-pink-950: oklch(0.45 0.05 350);
+
+  /* Brand White */
+  --color-white: oklch(1 0 0);
 }

@@ -2,6 +2,8 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
+
 import { motion } from 'framer-motion';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 
@@ -35,37 +37,45 @@ const Navbar = () => {
         scrolled ? 'bg-white/90 backdrop-blur-md shadow-lg' : 'bg-transparent'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
-          <Link href="/" className="flex items-center">
-            <span className="text-2xl font-bold text-gray-900">BrickRat</span>
-          </Link>
+      <div className="bg-gray-900/30 backdrop-blur-sm">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center h-16">
+            <Link href="/" className="flex items-center">
+            <Image
+              src="/logo.png"
+              alt="BrickRat Logo"
+              width={200}
+              height={80}
+              className="h-16 w-auto p-3"
+            />          
+            </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
-            {navItems.map((item) => (
-              <Link
-                key={item.name}
-                href={item.href}
-                className="text-gray-700 hover:text-gray-900 transition-colors duration-200"
+            {/* Desktop Navigation */}
+            <div className="hidden md:flex items-center space-x-8">
+              {navItems.map((item) => (
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  className="text-white font-semibold drop-shadow-lg hover:text-pink-500 transition-colors duration-200"
+                >
+                  {item.name}
+                </Link>
+              ))}
+            </div>
+
+            {/* Mobile menu button */}
+            <div className="md:hidden">
+              <button
+                onClick={() => setIsOpen(!isOpen)}
+                className="inline-flex items-center justify-center p-2 rounded-md text-white hover:text-pink-500 focus:outline-none"
               >
-                {item.name}
-              </Link>
-            ))}
-          </div>
-
-          {/* Mobile menu button */}
-          <div className="md:hidden">
-            <button
-              onClick={() => setIsOpen(!isOpen)}
-              className="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-gray-900 focus:outline-none"
-            >
-              {isOpen ? (
-                <XMarkIcon className="h-6 w-6" />
-              ) : (
-                <Bars3Icon className="h-6 w-6" />
-              )}
-            </button>
+                {isOpen ? (
+                  <XMarkIcon className="h-6 w-6" />
+                ) : (
+                  <Bars3Icon className="h-6 w-6" />
+                )}
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -85,7 +95,7 @@ const Navbar = () => {
             <Link
               key={item.name}
               href={item.href}
-              className="block px-3 py-2 text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-md"
+              className="block px-3 py-2 text-white font-semibold hover:text-pink-500 hover:bg-white/10 rounded-md"
               onClick={() => setIsOpen(false)}
             >
               {item.name}

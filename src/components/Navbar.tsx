@@ -64,9 +64,7 @@ const Navbar = () => {
   }
 
   return (
-    <nav className={`fixed w-full z-50 transition-all duration-300 ${
-      scrolled ? 'bg-gray-900/30 backdrop-blur-sm' : 'bg-transparent'
-    }`}>
+    <nav className="fixed w-full z-50 bg-teal-900/50 backdrop-blur-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <Link href="/" className="flex items-center">
@@ -86,7 +84,7 @@ const Navbar = () => {
               <Link
                 key={item.name}
                 href={item.href}
-                className="text-white font-semibold drop-shadow-lg hover:text-pink-500 transition-colors duration-200"
+                className="text-white font-semibold drop-shadow-lg hover:text-pink-500 transition-all duration-300 ease-out hover:scale-102 hover:-translate-y-[1px] hover:drop-shadow-[0_0_15px_rgba(236,72,153,0.3)]"
               >
                 {item.name}
               </Link>
@@ -117,14 +115,14 @@ const Navbar = () => {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.2 }}
-            className="md:hidden bg-gray-900/30 backdrop-blur-sm"
+            className="md:hidden bg-teal-900/50 backdrop-blur-sm"
           >
             <div className="px-2 pt-2 pb-3 space-y-1">
               {navItems.map((item) => (
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="block px-3 py-2 text-white font-semibold hover:text-pink-500 hover:bg-white/10 rounded-md"
+                  className="block px-3 py-2 text-white font-semibold hover:text-pink-500 hover:bg-white/10 rounded-md transition-all duration-300 ease-out hover:scale-102 hover:-translate-y-[1px] hover:drop-shadow-[0_0_15px_rgba(236,72,153,0.3)]"
                   onClick={() => setIsOpen(false)}
                 >
                   {item.name}

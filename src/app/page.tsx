@@ -19,7 +19,7 @@ export default function Home() {
         <div className="absolute inset-0 bg-gradient-to-b from-navy-900/80 to-navy-900/50" />
         <div className="relative z-10 flex h-full flex-col items-center justify-center text-center">
           <h1 className="mb-6 text-5xl font-bold text-white">
-            BrickRat
+            brickat
           </h1>
           <p className="mb-8 max-w-2xl text-xl text-white">
             Your trusted partner in construction and renovation

@@ -44,7 +44,7 @@ export default function About() {
                 Our Mission
               </h2>
               <p className="text-lg text-gray-900/80 mb-6">
-                At BrickRat, we are on a mission to transform the way people experience and understand architectural designs. We believe that everyone should be able to step into their future spaces before they're built, making informed decisions with confidence.
+                At BrickRat, we are on a mission to transform the way people experience and understand architectural designs. We believe that everyone should be able to step into their future spaces before they&apos;re built, making informed decisions with confidence.
               </p>
               <p className="text-lg text-gray-900/80">
                 Our innovative approach combines cutting-edge 3D visualization technology with intuitive user interfaces to create immersive experiences that bridge the gap between imagination and reality.
@@ -172,7 +172,7 @@ export default function About() {
 const values = [
   {
     title: 'Innovation',
-    description: 'We constantly push the boundaries of what\'s possible in architectural visualization.',
+    description: 'We constantly push the boundaries of what&apos;s possible in architectural visualization.',
     icon: (
       <svg className="w-6 h-6 text-teal-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />

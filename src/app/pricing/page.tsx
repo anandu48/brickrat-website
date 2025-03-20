@@ -74,7 +74,7 @@ export default function Pricing() {
   };
 
   return (
-    <div className="min-h-screen py-20 bg-teal-50">
+    <div className="min-h-screen py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -82,19 +82,19 @@ export default function Pricing() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h1 className="text-4xl font-bold text-navy-900 mb-4">
+          <h1 className="text-4xl font-bold text-gray-900 mb-4">
             Project Price Calculator
           </h1>
-          <p className="text-xl text-navy-900/80 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Calculate the cost of your interactive architectural visualization project
           </p>
         </motion.div>
 
-        <div className="bg-white rounded-xl shadow-lg p-8 border border-teal-200">
+        <div className="bg-white rounded-xl shadow-lg p-8">
           <div className="space-y-8">
             {/* Total Area Input */}
             <div>
-              <label className="block text-lg font-medium text-navy-900 mb-4">
+              <label className="block text-lg font-medium text-gray-900 mb-4">
                 Total Area (ft²)
               </label>
               <input
@@ -103,12 +103,12 @@ export default function Pricing() {
                 max="107639"
                 value={totalArea}
                 onChange={(e) => setTotalArea(Number(e.target.value))}
-                className="w-full h-2 bg-teal-200 rounded-lg appearance-none cursor-pointer"
+                className="w-full h-2 bg-teal-200 rounded-lg appearance-none cursor-pointer accent-teal-500 hover:accent-pink-500 transition-colors"
               />
               <div className="flex justify-between mt-2">
-                <span className="text-sm text-navy-900/60">1,000 ft²</span>
-                <span className="text-sm text-navy-900/60">107,639 ft²</span>
-                <span className="text-sm font-medium text-navy-900">
+                <span className="text-sm text-gray-600">1,000 ft²</span>
+                <span className="text-sm text-gray-600">107,639 ft²</span>
+                <span className="text-sm font-medium text-gray-900">
                   {totalArea.toLocaleString()} ft²
                 </span>
               </div>
@@ -116,11 +116,11 @@ export default function Pricing() {
 
             {/* Building Types */}
             <div>
-              <label className="block text-lg font-medium text-navy-900 mb-4">
+              <label className="block text-lg font-medium text-gray-900 mb-4">
                 Types of Buildings
               </label>
               <select
-                className="w-full p-3 border border-teal-300 rounded-lg bg-white text-navy-900"
+                className="w-full p-3 border border-gray-300 rounded-lg"
                 value={buildingType}
                 onChange={(e) => setBuildingType(e.target.value)}
               >
@@ -142,38 +142,38 @@ export default function Pricing() {
 
             {/* Basic Functionality */}
             <div>
-              <h3 className="text-lg font-medium text-navy-900 mb-4">
+              <h3 className="text-lg font-medium text-gray-900 mb-4">
                 Basic Functionality
               </h3>
               <div className="space-y-2">
                 <div className="flex items-center">
                   <input
                     type="checkbox"
-                    className="h-4 w-4 text-teal-500"
+                    className="h-4 w-4 text-blue-600"
                     checked
                     disabled
                   />
-                  <span className="ml-2 text-navy-900/80">Professional camera</span>
+                  <span className="ml-2 text-gray-700">Professional camera</span>
                 </div>
                 <div className="flex items-center">
                   <input
                     type="checkbox"
-                    className="h-4 w-4 text-teal-500"
+                    className="h-4 w-4 text-blue-600"
                     checked
                     disabled
                   />
-                  <span className="ml-2 text-navy-900/80">
+                  <span className="ml-2 text-gray-700">
                     Weather and time settings (LITE ver.)
                   </span>
                 </div>
                 <div className="flex items-center">
                   <input
                     type="checkbox"
-                    className="h-4 w-4 text-teal-500"
+                    className="h-4 w-4 text-blue-600"
                     checked
                     disabled
                   />
-                  <span className="ml-2 text-navy-900/80">
+                  <span className="ml-2 text-gray-700">
                     &quot;DRONE&quot; Presentation mode
                   </span>
                 </div>
@@ -182,7 +182,7 @@ export default function Pricing() {
 
             {/* Additional Functions */}
             <div>
-              <h3 className="text-lg font-medium text-navy-900 mb-4">
+              <h3 className="text-lg font-medium text-gray-900 mb-4">
                 Additional Functions
               </h3>
               <div className="space-y-2">
@@ -190,124 +190,125 @@ export default function Pricing() {
                   <div className="flex items-center">
                     <input
                       type="checkbox"
-                      className="h-4 w-4 text-teal-500"
+                      className="h-4 w-4 text-blue-600"
                       checked={additionalFunctions.configurator}
                       onChange={() =>
                         handleAdditionalFunctionChange('configurator')
                       }
                     />
-                    <span className="ml-2 text-navy-900/80">Configurator</span>
+                    <span className="ml-2 text-gray-700">Configurator</span>
                   </div>
-                  <span className="text-navy-900/60">+$1000</span>
+                  <span className="text-gray-600">+$1000</span>
                 </div>
                 <div className="flex items-center justify-between">
                   <div className="flex items-center">
                     <input
                       type="checkbox"
-                      className="h-4 w-4 text-teal-500"
+                      className="h-4 w-4 text-blue-600"
                       checked={additionalFunctions.weatherPro}
                       onChange={() =>
                         handleAdditionalFunctionChange('weatherPro')
                       }
                     />
-                    <span className="ml-2 text-navy-900/80">
+                    <span className="ml-2 text-gray-700">
                       Weather and time settings (PRO ver.)
                     </span>
                   </div>
-                  <span className="text-navy-900/60">+$500</span>
+                  <span className="text-gray-600">+$500</span>
                 </div>
                 <div className="flex items-center justify-between">
                   <div className="flex items-center">
                     <input
                       type="checkbox"
-                      className="h-4 w-4 text-teal-500"
+                      className="h-4 w-4 text-blue-600"
                       checked={additionalFunctions.touchPresentation}
                       onChange={() =>
                         handleAdditionalFunctionChange('touchPresentation')
                       }
                     />
-                    <span className="ml-2 text-navy-900/80">
+                    <span className="ml-2 text-gray-700">
                       TOUCH PRESENTATION mode
                     </span>
                   </div>
-                  <span className="text-navy-900/60">+$1000</span>
+                  <span className="text-gray-600">+$1000</span>
                 </div>
                 <div className="flex items-center justify-between">
                   <div className="flex items-center">
                     <input
                       type="checkbox"
-                      className="h-4 w-4 text-teal-500"
+                      className="h-4 w-4 text-blue-600"
                       checked={additionalFunctions.thirdPerson}
                       onChange={() =>
                         handleAdditionalFunctionChange('thirdPerson')
                       }
                     />
-                    <span className="ml-2 text-navy-900/80">3RD PERSON mode</span>
+                    <span className="ml-2 text-gray-700">3RD PERSON mode</span>
                   </div>
-                  <span className="text-navy-900/60">+$300</span>
+                  <span className="text-gray-600">+$300</span>
                 </div>
                 <div className="flex items-center justify-between">
                   <div className="flex items-center">
                     <input
                       type="checkbox"
-                      className="h-4 w-4 text-teal-500"
+                      className="h-4 w-4 text-blue-600"
                       checked={additionalFunctions.autoMode}
-                      onChange={() =>
-                        handleAdditionalFunctionChange('autoMode')
-                      }
+                      onChange={() => handleAdditionalFunctionChange('autoMode')}
                     />
-                    <span className="ml-2 text-navy-900/80">AUTO mode</span>
+                    <span className="ml-2 text-gray-700">AUTO mode</span>
                   </div>
-                  <span className="text-navy-900/60">+$300</span>
+                  <span className="text-gray-600">+$300</span>
                 </div>
                 <div className="flex items-center justify-between">
                   <div className="flex items-center">
                     <input
                       type="checkbox"
-                      className="h-4 w-4 text-teal-500"
+                      className="h-4 w-4 text-blue-600"
                       checked={additionalFunctions.firstPerson}
                       onChange={() =>
                         handleAdditionalFunctionChange('firstPerson')
                       }
                     />
-                    <span className="ml-2 text-navy-900/80">1ST PERSON mode</span>
+                    <span className="ml-2 text-gray-700">1ST PERSON mode</span>
                   </div>
-                  <span className="text-navy-900/60">+$300</span>
+                  <span className="text-gray-600">+$300</span>
                 </div>
               </div>
             </div>
 
             {/* Source Data */}
             <div>
-              <h3 className="text-lg font-medium text-navy-900 mb-4">
+              <h3 className="text-lg font-medium text-gray-900 mb-4">
                 Source Data
               </h3>
               <select
-                className="w-full p-3 border border-teal-300 rounded-lg bg-white text-navy-900"
+                className="w-full p-3 border border-gray-300 rounded-lg"
                 value={sourceData}
                 onChange={(e) => setSourceData(e.target.value)}
               >
-                <option value="none">No source data</option>
-                <option value="model">3D model</option>
-                <option value="design">Design documentation</option>
+                <option value="none">NONE</option>
+                <option value="model">
+                  Ready-made 3D model (-30%)
+                </option>
+                <option value="design">
+                  Architectural design and static visualizations (-5%)
+                </option>
               </select>
             </div>
 
             {/* Total Price */}
-            <div className="bg-teal-50 rounded-lg p-6 border border-teal-200">
+            <div className="bg-gray-50 p-6 rounded-lg">
               <div className="flex justify-between items-center">
-                <span className="text-xl font-semibold text-navy-900">
-                  Total Price
+                <span className="text-2xl font-bold text-gray-900">
+                  TOTAL PRICE
                 </span>
-                <span className="text-3xl font-bold text-teal-600">
-                  ${totalPrice.toLocaleString()}
+                <span className="text-3xl font-bold text-blue-600">
+                  ${totalPrice.toFixed(2)}
                 </span>
               </div>
             </div>
 
-            {/* Calculate Button */}
-            <button className="w-full bg-teal-500 hover:bg-teal-600 text-white py-4 rounded-lg font-semibold transition-colors">
-              Calculate Price
+            <button className="w-full bg-teal-500 hover:bg-teal-600 text-white px-8 py-4 rounded-lg font-semibold transition-colors">
+              Send Request
             </button>
           </div>
         </div>

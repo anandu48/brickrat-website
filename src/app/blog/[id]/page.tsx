@@ -12,8 +12,8 @@ const getBlogPost = (id: string) => {
       title: 'The Future of Architectural Visualization',
       content: `
         Virtual reality and real-time rendering are revolutionizing the way architects and designers present their work. 
-        This transformation is not just about creating prettier pictures – it's about fundamentally changing how we interact 
-        with and understand architectural spaces before they're built.
+        This transformation is not just about creating prettier pictures – it&apos;s about fundamentally changing how we interact 
+        with and understand architectural spaces before they&apos;re built.
 
         The Impact of Real-Time Rendering
         Real-time rendering has become a game-changer in architectural visualization. It allows clients to explore designs 
@@ -77,7 +77,7 @@ export default function BlogPost() {
       <div className="min-h-screen flex items-center justify-center">
         <div className="text-center">
           <h1 className="text-4xl font-bold text-gray-900 mb-4">Blog Post Not Found</h1>
-          <p className="text-gray-600 mb-8">The blog post you're looking for doesn't exist.</p>
+          <p className="text-gray-600 mb-8">The blog post you&apos;re looking for doesn&apos;t exist.</p>
           <Link
             href="/blog"
             className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors"

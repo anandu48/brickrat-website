@@ -23,11 +23,6 @@ export default function About() {
             </p>
           </motion.div>
         </div>
-        {/* Updated overlay gradient using navy-900 and teal-500 */}
-        <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-gradient-to-r from-navy-900/80 to-teal-500/80 z-10" />
-          {/* Optionally, you can keep a background image/video here */}
-        </div>
       </section>
 
       {/* Mission Section */}
@@ -39,6 +34,7 @@ export default function About() {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
+              className="bg-white rounded-xl shadow-lg p-8 border border-teal-200"
             >
               <h2 className="text-3xl font-bold text-navy-900 mb-6">
                 Our Mission
@@ -55,7 +51,7 @@ export default function About() {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
-              className="relative h-[400px] rounded-lg overflow-hidden"
+              className="relative h-[400px] rounded-lg overflow-hidden border border-teal-200"
             >
               <Image
                 src="/mission-image.jpg"
@@ -94,9 +90,9 @@ export default function About() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: index * 0.2 }}
                 viewport={{ once: true }}
-                className="bg-teal-800/50 backdrop-blur-sm p-8 rounded-xl shadow-lg border border-teal-500/20"
+                className="bg-white/10 backdrop-blur-sm p-8 rounded-xl shadow-lg border border-teal-200/20"
               >
-                <div className="w-12 h-12 bg-teal-700/50 rounded-lg flex items-center justify-center mb-6">
+                <div className="w-12 h-12 bg-teal-500/20 rounded-lg flex items-center justify-center mb-6">
                   {value.icon}
                 </div>
                 <h3 className="text-xl font-semibold text-white mb-4">
@@ -137,9 +133,9 @@ export default function About() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: index * 0.2 }}
                 viewport={{ once: true }}
-                className="text-center"
+                className="bg-white rounded-xl shadow-lg p-8 text-center border border-teal-200"
               >
-                <div className="relative w-48 h-48 mx-auto mb-6 rounded-full overflow-hidden">
+                <div className="relative w-48 h-48 mx-auto mb-6 rounded-full overflow-hidden border-2 border-teal-200">
                   <Image
                     src={member.image}
                     alt={member.name}
@@ -147,11 +143,11 @@ export default function About() {
                     className="object-cover"
                   />
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                <h3 className="text-xl font-semibold text-navy-900 mb-2">
                   {member.name}
                 </h3>
-                <p className="text-teal-500 mb-4">{member.role}</p>
-                <p className="text-gray-900/80">
+                <p className="text-teal-600 mb-4">{member.role}</p>
+                <p className="text-navy-900/80">
                   {member.bio}
                 </p>
               </motion.div>
@@ -168,7 +164,7 @@ const values = [
     title: 'Innovation',
     description: 'We constantly push the boundaries of what&apos;s possible in architectural visualization.',
     icon: (
-      <svg className="w-6 h-6 text-pink-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <svg className="w-6 h-6 text-teal-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
       </svg>
     ),
@@ -177,7 +173,7 @@ const values = [
     title: 'Excellence',
     description: 'We strive for the highest quality in every project we undertake.',
     icon: (
-      <svg className="w-6 h-6 text-pink-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <svg className="w-6 h-6 text-teal-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
       </svg>
     ),
@@ -186,7 +182,7 @@ const values = [
     title: 'Collaboration',
     description: 'We work closely with our clients to bring their vision to life.',
     icon: (
-      <svg className="w-6 h-6 text-pink-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <svg className="w-6 h-6 text-teal-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
       </svg>
     ),

@@ -18,11 +18,12 @@ export default function Home() {
         </video>
         <div className="absolute inset-0 bg-gradient-to-b from-navy-900/80 to-navy-900/50" />
         <div className="relative z-10 flex h-full flex-col items-center justify-center text-center">
-          <h1 className="mb-6 text-5xl font-bold text-white">
-            brickat
+          <h1 className="mb-6 text-5xl md:text-7xl font-medium font-poppins drop-shadow-lg">
+            <div className="text-teal-500">Experience your designs,</div>
+            <div className="text-teal-500">like{' '}<span className="text-pink-500">never before.</span></div>
           </h1>
-          <p className="mb-8 max-w-2xl text-xl text-white">
-            Your trusted partner in construction and renovation
+          <p className="mb-8 max-w-2xl text-xl md:text-2xl text-white/80 font-poppins font-light mx-auto">
+            Immersive 3D Visualizations Bridging Imagination and Reality
           </p>
           <div className="flex gap-4">
             <Link

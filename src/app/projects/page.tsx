@@ -14,7 +14,7 @@ export default function Projects() {
   return (
     <div className="min-h-screen pt-16">
       {/* Hero Section */}
-      <section className="relative py-20 bg-gray-900 text-white">
+      <section className="relative py-20 bg-navy-900 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -25,7 +25,7 @@ export default function Projects() {
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
               Our Projects
             </h1>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+            <p className="text-xl text-white/80 max-w-3xl mx-auto">
               Explore our portfolio of successful architectural visualization projects
             </p>
           </motion.div>
@@ -33,7 +33,7 @@ export default function Projects() {
       </section>
 
       {/* Category Filter */}
-      <section className="py-8 bg-white border-b">
+      <section className="py-8 bg-white border-b border-teal-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-wrap justify-center gap-4">
             {categories.map((category) => (
@@ -42,8 +42,8 @@ export default function Projects() {
                 onClick={() => setActiveCategory(category)}
                 className={`px-6 py-2 rounded-full transition-colors ${
                   activeCategory === category
-                    ? 'bg-blue-600 text-white'
-                    : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                    ? 'bg-teal-500 text-white'
+                    : 'bg-teal-50 text-navy-900 hover:bg-teal-100'
                 }`}
               >
                 {category.charAt(0).toUpperCase() + category.slice(1)}
@@ -64,7 +64,7 @@ export default function Projects() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: index * 0.2 }}
                 viewport={{ once: true }}
-                className="bg-white rounded-xl shadow-lg overflow-hidden group"
+                className="bg-white rounded-xl shadow-lg overflow-hidden group border border-teal-200"
               >
                 <div className="relative h-64">
                   <Image
@@ -73,24 +73,24 @@ export default function Projects() {
                     fill
                     className="object-cover transition-transform duration-300 group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                    <button className="bg-white text-gray-900 px-6 py-2 rounded-full font-semibold transform -translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                  <div className="absolute inset-0 bg-navy-900/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                    <button className="bg-teal-500 text-white px-6 py-2 rounded-full font-semibold transform -translate-y-2 group-hover:translate-y-0 transition-transform duration-300 hover:bg-teal-600">
                       View Details
                     </button>
                   </div>
                 </div>
                 <div className="p-6">
-                  <h3 className="text-xl font-bold text-gray-900 mb-2">
+                  <h3 className="text-xl font-bold text-navy-900 mb-2">
                     {project.title}
                   </h3>
-                  <p className="text-gray-600 mb-4">
+                  <p className="text-navy-900/80 mb-4">
                     {project.description}
                   </p>
                   <div className="flex items-center justify-between">
-                    <span className="text-sm text-gray-500">
+                    <span className="text-sm text-teal-600">
                       {project.category}
                     </span>
-                    <span className="text-sm text-gray-500">
+                    <span className="text-sm text-navy-900/60">
                       {project.year}
                     </span>
                   </div>
@@ -102,7 +102,7 @@ export default function Projects() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gray-900 text-white">
+      <section className="py-20 bg-navy-900 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -113,10 +113,10 @@ export default function Projects() {
             <h2 className="text-3xl font-bold mb-6">
               Ready to Start Your Project?
             </h2>
-            <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
+            <p className="text-xl text-white/80 mb-8 max-w-3xl mx-auto">
               Let&apos;s create something extraordinary together. Contact us today to discuss your vision.
             </p>
-            <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors">
+            <button className="bg-teal-500 hover:bg-teal-600 text-white px-8 py-3 rounded-lg font-semibold transition-colors">
               Get Started
             </button>
           </motion.div>

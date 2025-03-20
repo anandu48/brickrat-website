@@ -10,7 +10,7 @@ export default function Testimonials() {
   return (
     <div className="min-h-screen pt-16">
       {/* Hero Section */}
-      <section className="relative py-20 bg-gray-900 text-white">
+      <section className="relative py-20 bg-navy-900 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -21,7 +21,7 @@ export default function Testimonials() {
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
               Client Testimonials
             </h1>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+            <p className="text-xl text-white/80 max-w-3xl mx-auto">
               Hear what our clients have to say about their experience with BrickRat
             </p>
           </motion.div>
@@ -39,7 +39,7 @@ export default function Testimonials() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: index * 0.2 }}
                 viewport={{ once: true }}
-                className="bg-white rounded-xl shadow-lg p-8"
+                className="bg-white rounded-xl shadow-lg p-8 border border-teal-200"
               >
                 <div className="flex items-center mb-6">
                   <div className="relative w-16 h-16 rounded-full overflow-hidden mr-4">
@@ -51,19 +51,19 @@ export default function Testimonials() {
                     />
                   </div>
                   <div>
-                    <h3 className="text-xl font-semibold text-gray-900">
+                    <h3 className="text-xl font-semibold text-navy-900">
                       {testimonial.name}
                     </h3>
-                    <p className="text-gray-600">
+                    <p className="text-teal-600">
                       {testimonial.role}
                     </p>
                   </div>
                 </div>
-                <p className="text-gray-600 mb-6">
+                <p className="text-navy-900/80 mb-6">
                   {testimonial.content}
                 </p>
                 <div className="flex items-center">
-                  <div className="flex text-yellow-400">
+                  <div className="flex text-pink-500">
                     {[...Array(5)].map((_, i) => (
                       <svg
                         key={i}
@@ -75,7 +75,7 @@ export default function Testimonials() {
                       </svg>
                     ))}
                   </div>
-                  <span className="ml-2 text-gray-600">
+                  <span className="ml-2 text-navy-900/60">
                     {testimonial.rating}/5
                   </span>
                 </div>
@@ -86,7 +86,7 @@ export default function Testimonials() {
       </section>
 
       {/* Interactive Testimonial Carousel */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-teal-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -95,10 +95,10 @@ export default function Testimonials() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl font-bold text-navy-900 mb-4">
               Success Stories
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-navy-900/80 max-w-3xl mx-auto">
               Discover how we&apos;ve helped our clients achieve their goals
             </p>
           </motion.div>
@@ -110,7 +110,7 @@ export default function Testimonials() {
                 initial={{ opacity: 0, x: 100 }}
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -100 }}
-                className="bg-white rounded-xl shadow-lg p-8 max-w-3xl mx-auto"
+                className="bg-white rounded-xl shadow-lg p-8 max-w-3xl mx-auto border border-teal-200"
               >
                 <div className="flex items-center mb-6">
                   <div className="relative w-20 h-20 rounded-full overflow-hidden mr-6">
@@ -122,20 +122,20 @@ export default function Testimonials() {
                     />
                   </div>
                   <div>
-                    <h3 className="text-2xl font-semibold text-gray-900">
+                    <h3 className="text-2xl font-semibold text-navy-900">
                       {carouselTestimonials[activeTestimonial].name}
                     </h3>
-                    <p className="text-gray-600">
+                    <p className="text-teal-600">
                       {carouselTestimonials[activeTestimonial].role}
                     </p>
                   </div>
                 </div>
-                <p className="text-xl text-gray-600 mb-8">
+                <p className="text-xl text-navy-900/80 mb-8">
                   {carouselTestimonials[activeTestimonial].content}
                 </p>
                 <div className="flex items-center justify-between">
                   <div className="flex items-center">
-                    <div className="flex text-yellow-400">
+                    <div className="flex text-pink-500">
                       {[...Array(5)].map((_, i) => (
                         <svg
                           key={i}
@@ -147,24 +147,24 @@ export default function Testimonials() {
                         </svg>
                       ))}
                     </div>
-                    <span className="ml-2 text-gray-600">
+                    <span className="ml-2 text-navy-900/60">
                       {carouselTestimonials[activeTestimonial].rating}/5
                     </span>
                   </div>
                   <div className="flex space-x-2">
                     <button
                       onClick={() => setActiveTestimonial((prev) => (prev === 0 ? carouselTestimonials.length - 1 : prev - 1))}
-                      className="p-2 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors"
+                      className="p-2 rounded-full bg-teal-100 hover:bg-teal-200 transition-colors"
                     >
-                      <svg className="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="w-6 h-6 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
                       </svg>
                     </button>
                     <button
                       onClick={() => setActiveTestimonial((prev) => (prev === carouselTestimonials.length - 1 ? 0 : prev + 1))}
-                      className="p-2 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors"
+                      className="p-2 rounded-full bg-teal-100 hover:bg-teal-200 transition-colors"
                     >
-                      <svg className="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="w-6 h-6 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                       </svg>
                     </button>
@@ -177,7 +177,7 @@ export default function Testimonials() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gray-900 text-white">
+      <section className="py-20 bg-navy-900 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -188,10 +188,10 @@ export default function Testimonials() {
             <h2 className="text-3xl font-bold mb-6">
               Ready to Experience the Difference?
             </h2>
-            <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
+            <p className="text-xl text-white/80 mb-8 max-w-3xl mx-auto">
               Join our growing list of satisfied clients and transform your architectural visualization needs.
             </p>
-            <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors">
+            <button className="bg-teal-500 hover:bg-teal-600 text-white px-8 py-3 rounded-lg font-semibold transition-colors">
               Get Started Today
             </button>
           </motion.div>

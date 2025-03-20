@@ -107,25 +107,25 @@ export default function About() {
         </div>
       </section>
 
-      {/* Team Section */}
-      <section className="py-20 bg-white">
+{/* Team Section */}
+<section className="py-20 bg-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-center mb-20"
           >
-            <h2 className="text-3xl font-bold text-navy-900 mb-4">
+            <h2 className="text-4xl font-bold text-white mb-6">
               Meet Our Team
             </h2>
-            <p className="text-xl text-navy-900/80 max-w-3xl mx-auto">
+            <p className="text-2xl text-gray-300 max-w-3xl mx-auto">
               The passionate individuals behind BrickRat&apos;s success
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
             {team.map((member, index) => (
               <motion.div
                 key={member.name}
@@ -133,9 +133,9 @@ export default function About() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: index * 0.2 }}
                 viewport={{ once: true }}
-                className="bg-white rounded-xl shadow-lg p-8 text-center border border-teal-200"
+                className="text-center bg-gray-800 p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300"
               >
-                <div className="relative w-48 h-48 mx-auto mb-6 rounded-full overflow-hidden border-2 border-teal-200">
+                <div className="relative w-56 h-56 mx-auto mb-8 rounded-full overflow-hidden shadow-md">
                   <Image
                     src={member.image}
                     alt={member.name}
@@ -143,11 +143,11 @@ export default function About() {
                     className="object-cover"
                   />
                 </div>
-                <h3 className="text-xl font-semibold text-navy-900 mb-2">
+                <h3 className="text-2xl font-semibold text-white mb-3">
                   {member.name}
                 </h3>
-                <p className="text-teal-600 mb-4">{member.role}</p>
-                <p className="text-navy-900/80">
+                <p className="text-lg text-blue-400 font-medium mb-4">{member.role}</p>
+                <p className="text-gray-300 text-lg">
                   {member.bio}
                 </p>
               </motion.div>
@@ -158,7 +158,6 @@ export default function About() {
     </div>
   );
 }
-
 const values = [
   {
     title: 'Innovation',
@@ -207,5 +206,11 @@ const team = [
     role: 'Creative Director',
     bio: 'Mike ensures that every project meets the highest standards of visual quality and user experience.',
     image: '/team/mike-johnson.jpg',
+  },
+  {
+    name: 'Sarah Wilson',
+    role: 'Head of Operations',
+    bio: 'Sarah oversees day-to-day operations and ensures smooth project delivery to our valued clients.',
+    image: '/team/sarah-wilson.jpg',
   },
 ];
